@@ -1,0 +1,52 @@
+{% extends "layout.html" %}
+
+{% block body %}
+
+<div class="grid-container">
+    <div class="navigation-bar grid-item-row-1">
+        <div class="navigation-bar-left">
+            <div>
+                <a href="/" class="active">Home</a>
+            </div>
+            <div>
+                <a href="/products-and-services/">Products and Services</a>
+            </div>
+            <div>
+                <a href="/about-us/">About Us</a>
+            </div>
+        </div>
+        <div class="navigation-bar-right">
+            <div>
+                <input type="search">
+                <button>Search</button>
+            </div>
+            <div>
+                Sign in
+            </div>
+        </div>
+    </div>
+    <div class="content-with-background-color grid-item-col-1-row-3">
+        <p>This text area should have colour background</p>
+        <p>We can give the area a height beyond the few text, for better visibility</p>
+    </div>
+    <div class="content-with-background-image grid-item-row-2">
+        <div class="animated-content">
+            <p>This is the {{title}} page</p>
+        </div>
+    </div>
+    <div class="content-with-background-color grid-item-col-2-row-3">
+        <p>This text should have colour background</p>
+        <p>We can give the area a height beyond the few text, for better visibility too</p>
+    </div>
+    <div class="content-with-background-image2 grid-item-row-4">
+        <p>This text area should have image background as well</p>
+        <p>We can choose to fix the image or scroll</p>
+        <p>We can give the area a height beyond the few text, for better visibility too</p>
+    </div>
+    <div class="content-with-background-color grid-item-col-3-row-3">
+        <p>This text should have colour background</p>
+        <p>We can give the area a height beyond the few text, for better visibility too</p>
+    </div>
+</div>
+
+{% endblock%}

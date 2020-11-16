@@ -1,0 +1,147 @@
+.navigation-bar div {
+    padding: 10px 15px 10px 20px;
+}
+
+.navigation-bar {
+    background-color: blue;
+    color: white;
+    display: flex;
+    flex-direction: column-reverse;
+}
+
+.navigation-bar-left, .navigation-bar-right{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.navigation-bar-left{
+    flex:2;
+}
+
+.navigation-bar-right{
+    flex:1;
+    transition: font-size 2s;
+}
+
+.navigation-bar-right{
+    justify-content: flex-end;
+}
+
+.content-with-background-image{
+    background-image: url(/static/img/image4.jpg);
+    background-attachment: fixed;
+    background-size: auto 1200px;
+    background-repeat: no-repeat;
+    height: 500px;
+    font-size: 2em;
+    border: 1px solid #eeeeee;
+    padding: 10px 15px 10px 20px;
+}
+
+.content-with-background-image2{
+    background-image: url(/static/img/image1.jpg);
+    background-attachment: scroll;
+    background-size: auto 1200px;
+    background-repeat: no-repeat;
+    height: 500px;
+    font-size: 2em;
+    border: 1px solid #eeeeee;
+    padding: 10px 15px 10px 20px;
+    /*margin: 10px;*/
+}
+
+.content-with-background-color{
+    min-height: 180px;
+    background-color: #eeeeee;
+    font-size: 1.5em;
+    border: 1px solid #eeeeee;
+    padding: 10px 15px 10px 20px;
+    /*margin: 10px;*/
+    color: #000000;
+    opacity: .8;
+}
+
+html{
+    font-size: 16px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.grid-container{
+    display:grid;
+    /*grid-template-columns: auto auto auto; /*3 define 3 columns of equal sizes*/
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    grid-template-areas:
+    "navigation navigation navigation"
+    "bg-image1 bg-image1 bg-image1"
+    "article1 article2 article3"
+    "bg-image2 bg-image2 bg-image2";
+    gap: 0 10px; /* gap creates a space between grid areas. The first value is row-gap and the second column-gap*/
+}
+
+.grid-item-row-1{
+    grid-area: navigation;
+}
+
+.grid-item-row-2{
+grid-area: bg-image1;
+}
+
+.grid-item-col-1-row-3{
+    grid-area: article1;
+}
+
+.grid-item-col-2-row-3{
+    grid-area: article2;
+}
+
+.grid-item-col-3-row-3{
+grid-area: article3;
+}
+
+.grid-item-row-4{
+    grid-area: bg-image2;
+}
+
+@media(max-width: 420px){
+    .grid-container{
+        grid-template-areas:
+        "navigation"
+        "bg-image1"
+        "article1"
+        "article2"
+        "article3"
+        "bg-image2";
+    }
+}
+
+.animated-content{
+    position: relative;
+    animation: mykeyframe 5s 1;
+    transition: font-size 3s;
+}
+
+@keyframes mykeyframe{
+    from{top: 300px;}
+    to {top: 0px;}
+}
+
+.animated-content:hover{
+    font-size: 2em;
+}
+
+.navigation-bar-right:hover{
+    font-size: 2em;
+}
+
+
+/* Additional classes for menu items */
+.navigation-bar a {
+    color: white; /* force color for links to be white and not whatever the default may be*/
+    text-decoration: none; /* ensures that there is no underline*/
+}
+
+.navigation-bar .active{
+    color: yellow; /* when the link is active, use yellow instead of white */
+    text-decoration: none;
+    font-weight: bold;
+}
