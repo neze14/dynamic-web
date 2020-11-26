@@ -1,0 +1,48 @@
+{% extends "layout.html" %}
+
+{% block body %}
+<div class="grid-container">
+    <div class="navigation-bar grid-item-row-1">
+        <div class="navigation-bar-left">
+             <div>
+                 <a href="/" >Home</a>
+             </div>
+             <div>
+                 <a href="/products-and-services/">Products and Services</a>
+             </div>
+                97
+             <div>
+                <a href="/about-us/">About Us</a>
+             </div>
+        </div>
+        <div class="navigation-bar-right">
+            <div>
+                <input type="search">
+                <button>Search</button>
+            </div>
+            <div>
+                {% if 'username' in session %}
+                    <a href="/logout/">Sign out</a>
+                {% else %}
+                    <a href="/login/">Sign in</a>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+    <div class="grid-item-row-2">
+        <h2 class="signup-title">{{title}}: {{information}}</h2>
+        <form method="post" action="/process-signup/">
+            <div class="form-grid">
+                <label>First Name: </label><input type="text" name="firstname" required maxlength="20">
+                <label>Last Name: </label><input type="text" name="lastname" required maxlength="20">
+                <label>Other Names: </label><input type="text" name="othernames" maxlength="20">
+                <label>Email: </label><input type="email" name="email" placeholder="Enter a valid email address
+                here" required maxlength="50">
+                <label>Password: </label><input type="password" name="password" placeholder="Enter password
+                here" required maxlength="50">
+                &nbsp;<input type="submit" value="Submit" class="button">
+            </div>
+        </form>
+    </div>
+</div>
+{% endblock%}

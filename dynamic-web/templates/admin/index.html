@@ -1,0 +1,22 @@
+{% extends "admin/base.html" %}
+{% block admin %}
+
+<!-- Using bulma to organize this admin area. See https://bulma.io/documentation/overview/ -->
+<div class="container is-fluid">
+    <!-- notification area begins here -->
+    <div class="notification">
+        {{title}}:&nbsp;&nbsp;&nbsp;{{information}}
+    </div>
+    <!-- notification area ends here -->
+    <!-- Admin specific menu header begins here. We are using bulma CSS tabs class with is-boxed specifier -->
+    <div class="tabs is-boxed">
+        <ul>
+            <li><a href="/admin/products/">Products</a></li>
+            <li><a>Services</a></li>
+            <li><a>Manage Database</a></li>
+        </ul>
+    </div>
+    <!-- Admin specific menu ends here -->
+</div>
+
+{% endblock%}

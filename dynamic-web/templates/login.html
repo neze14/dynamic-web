@@ -1,0 +1,41 @@
+{% extends "layout.html" %}
+{% block body %}
+
+<div class="grid-container">
+    <div class="navigation-bar grid-item-row-1">
+            <div class="navigation-bar-left">
+                <div>
+                    <a href="/" >Home</a>
+                </div>
+                <div>
+                    <a href="/products-and-services/">Products and Services</a>
+                </div>
+                <div>
+                    <a href="/about-us/">About Us</a>
+                </div>
+            </div>
+            <div class="navigation-bar-right">
+                <div>
+                    <input type="search">
+                    <button>Search</button>
+                </div>
+                <div>
+                    <a href="/login/" class="active">Sign in</a>
+                </div>
+            </div>
+    </div>
+    <div class="grid-item-row-2">
+        <h2 class="signup-title">{{title}}: {{information}}</h2>
+        <form method="post" action="/process-login/">
+            <div class="form-grid">
+                <label>Email: </label><input type="email" name="email" placeholder="Enter email address here" required>
+                <label>Password: </label><input type="password" name="password" placeholder="Enter password here" required>
+                &nbsp;<input type="submit" value="Login" class="button">
+                <label>&nbsp;</label><label>&nbsp;</label>
+                <label>Not yet a user? </label> <a href="/signup">Sign up</a>
+            </div>
+        </form>
+    </div>
+</div>
+
+{% endblock%}
